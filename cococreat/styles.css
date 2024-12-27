@@ -110,6 +110,36 @@ nav .cta:hover {
         color: white;
     }
 }
+/* Style for the Call Us button in About Us section */
+.call-us-button {
+    display: inline-block;
+    background: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.call-us-button:hover {
+    background: #FFA500;
+    color: white;
+}
+
+/* Navigation Call Us button (CTA style reused) */
+nav a.cta {
+    background: #FFD700;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav a.cta:hover {
+    background: #FFA500;
+}
 
 /* Toggle menu visibility on mobile */
 @media screen and (max-width: 768px) {
