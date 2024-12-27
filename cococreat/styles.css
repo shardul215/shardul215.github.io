@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -14,11 +14,25 @@ header {
     text-align: center;
 }
 header h1 {
-    font-size: 4em;
+    font-size: 3em;
     margin: 0;
 }
 header p {
     font-size: 1.5em;
+    margin: 10px 0;
+}
+.hero-cta {
+    background: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.hero-cta:hover {
+    background: #FFA500;
+    color: white;
 }
 nav {
     position: sticky;
@@ -26,52 +40,153 @@ nav {
     background: rgba(0, 0, 0, 0.8);
     color: white;
     display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 nav a {
     color: white;
     text-decoration: none;
-    padding: 0 15px;
-    font-size: 1.2em;
+    padding: 10px;
+    font-size: 1em;
 }
 nav a:hover {
     color: #FFD700;
 }
+nav .cta {
+    background: #FFD700;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+nav .cta:hover {
+    background: #FFA500;
+}
 section {
-    padding: 20px;
-}
-.services, .contact {
-    background: #f4f4f4;
     padding: 40px;
-}
-.services h2, .contact h2 {
     text-align: center;
-    margin-bottom: 20px;
 }
-.services .card, .gallery img {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 .services .card {
+    flex: 1 1 30%; /* Adjusts the width based on screen size */
+    min-width: 250px; /* Ensures cards don't get too narrow */
+    max-width: 500px; /* Maximum width for larger screens */
+    margin: 15px 0;
     padding: 15px;
-    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 .services .card:hover {
     transform: translateY(-10px);
 }
+/* Gallery Section */
+/* Gallery Section */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.landscape-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.landscape {
+    width: 45%; /* Two landscape images per row */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.landscape:hover {
+    transform: scale(1.05);
+}
+
+/* Portrait Image Styling */
+.portrait {
+    width: 45%; /* Portrait image alongside landscape images */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .landscape {
+        width: 45%; /* Two landscape images per row */
+    }
+
+    .portrait {
+        width: 45%; /* Portrait image in the second row */
+    }
+}
+
+@media (max-width: 480px) {
+    .landscape {
+        width: 100%; /* Single column for small screens */
+    }
+
+    .portrait {
+        width: 100%; /* Portrait also spans full width on small screens */
+    }
+}
+
+
+.gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+.contact input, .contact textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.contact button {
+    padding: 10px;
+    background: #FFD700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.contact button:hover {
+    background: #FFA500;
 }
 footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .services .card {
+        flex: 1 1 45%; /* Two cards per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services .card {
+        flex: 1 1 100%; /* Full-width cards on very small screens */
+    }
 }

@@ -5,18 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocotreat Homestay</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto;
-            max-height: 300px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -24,16 +13,18 @@
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
+        <a href="#booking" class="cta">Book Now</a>
     </nav>
 
     <header>
         <h1>Welcome to Cocotreat Homestay</h1>
         <p>Your home away from home</p>
+        <a href="#booking" class="hero-cta">Book Now</a>
     </header>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>Cocotreat Homestay offers luxurious rooms, Authentic Local dining, and exceptional service in the heart of the city. Come and experience hospitality like never before.</p>
+        <p>Cocotreat Homestay offers luxurious rooms, authentic local dining, and exceptional service in the heart of the city. Come and experience hospitality like never before.</p>
     </section>
 
     <section id="services" class="services">
@@ -47,20 +38,41 @@
             <p>Savor delicious meals prepared with local flavors and traditions.</p>
         </div>
         <div class="card">
-            <h3>Nice Riverside View</h3>
+            <h3>Riverside View</h3>
             <p>Relax and unwind with breathtaking views of the serene riverside.</p>
         </div>
     </section>
 
     <section id="gallery" class="gallery">
         <h2>Gallery</h2>
-        <img src="room.jpg" alt="Luxury Room">
-        <img src="dining.jpg" alt="Fine Dining">
-        
+        <div class="landscape-container">
+            <img src="room.jpg" alt="Luxury Room" class="landscape">
+            <img src="dining.jpg" alt="Fine Dining" class="landscape">
+
+        </div>
+        <div class="landscape-container">
+            <img src="view2.jpg" alt="view2" class="landscape">
+            <img src="view.jpg" alt="view" class="landscape">
+
+            
+        </div>
+        <div class="landscape-container">
+            <img src="portrait.jpg" alt="view2" class="portrait">
+            <img src="portrait2.jpg" alt="view" class="portrait">
+
+        </div>
+    </section>
+    
     </section>
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
+        <!-- <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form> -->
         <p>Email: cocotreat.homestay@gmail.com | Phone: 9422079515</p>
         <p>Address: Pato Bridge, Banda, Maharashtra-416511S</p>
     </section>
