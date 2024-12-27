@@ -104,6 +104,7 @@ section {
 }
 
 /* Gallery Section */
+/* General styles for the gallery */
 .gallery {
     display: flex;
     flex-direction: column;
@@ -115,6 +116,8 @@ section {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    width: 100%;
 }
 
 .landscape {
@@ -123,23 +126,21 @@ section {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s;
+    max-width: 100%; /* Ensure images do not exceed their container */
+    margin-bottom: 15px;
 }
 
 .landscape:hover {
     transform: scale(1.05);
 }
 
-/* Portrait Image Styling */
 .portrait {
     width: 45%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-}
-
-.gallery img {
-    max-width: 100%;
-    border-radius: 8px;
+    max-width: 100%; /* Ensure portrait images also scale properly */
+    margin-bottom: 15px;
 }
 
 /* Responsive Adjustments */
@@ -155,33 +156,45 @@ section {
     .services .card {
         flex: 1 1 45%; /* Two cards per row on medium screens */
     }
+
+    /* Ensure images don't stretch on medium screens */
+    .landscape-container {
+        justify-content: flex-start; /* Align left for better flow */
+    }
 }
 
 @media (max-width: 480px) {
     .landscape {
-        width: 100%; /* Single column for small screens */
+        width: 100%; /* Full width on very small screens */
     }
 
     .portrait {
-        width: 100%; /* Portrait also spans full width on small screens */
+        width: 100%; /* Portrait images also span full width */
     }
 
     .services .card {
         flex: 1 1 100%; /* Full-width cards on very small screens */
     }
 
+    /* Adjust the layout and font sizes for small screens */
     header h1 {
-        font-size: 2em; /* Adjust header font size for small screens */
+        font-size: 2em;
     }
 
     header p {
-        font-size: 1.2em; /* Adjust paragraph font size for small screens */
+        font-size: 1.2em;
     }
 
     .hero-cta {
-        font-size: 1em; /* Adjust CTA button size */
+        font-size: 1em;
+    }
+
+    /* Fix gallery image spacing on small screens */
+    .landscape-container {
+        flex-direction: column; /* Stack images vertically on small screens */
     }
 }
+
 
 .contact form {
     display: flex;
