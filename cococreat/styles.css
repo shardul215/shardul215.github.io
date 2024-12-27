@@ -39,7 +39,7 @@ header p {
     background: #FFA500;
     color: white;
 }
-
+/* Navigation Bar Styles */
 nav {
     position: sticky;
     top: 0;
@@ -47,7 +47,10 @@ nav {
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Align items vertically */
     padding: 10px 20px;
+    width: 100%; /* Ensure navbar spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 nav a {
@@ -55,6 +58,7 @@ nav a {
     text-decoration: none;
     padding: 10px;
     font-size: 1em;
+    display: inline-block; /* Ensure links are block-level */
 }
 
 nav a:hover {
@@ -72,6 +76,36 @@ nav .cta {
 nav .cta:hover {
     background: #FFA500;
 }
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+        align-items: stretch; /* Ensure the items stretch across the screen */
+    }
+
+    nav a {
+        padding: 15px; /* Increase padding for better touch accessibility */
+        text-align: center; /* Center-align the links */
+        width: 100%; /* Make the links take up full width */
+    }
+
+    nav .cta {
+        width: 100%; /* Ensure the call-to-action button spans the full width */
+        padding: 15px; /* Make the button taller */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav a {
+        font-size: 1.2em; /* Slightly increase font size for better readability on smaller screens */
+    }
+
+    nav .cta {
+        font-size: 1.2em; /* Increase button text size on small screens */
+    }
+}
+
 
 section {
     padding: 40px;
