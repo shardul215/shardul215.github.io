@@ -40,6 +40,7 @@ header p {
     color: white;
 }
 /* Navigation Bar Styles */
+/* Navigation Bar Styles */
 nav {
     position: sticky;
     top: 0;
@@ -77,11 +78,19 @@ nav .cta:hover {
     background: #FFA500;
 }
 
+/* Hamburger menu icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* Mobile-specific styles */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column; /* Stack navbar items vertically on small screens */
         align-items: stretch; /* Ensure the items stretch across the screen */
+        display: none; /* Initially hide the navbar items */
     }
 
     nav a {
@@ -94,6 +103,19 @@ nav .cta:hover {
         width: 100%; /* Ensure the call-to-action button spans the full width */
         padding: 15px; /* Make the button taller */
     }
+
+    /* Show the menu icon on small screens */
+    .menu-icon {
+        display: block;
+        color: white;
+    }
+}
+
+/* Toggle menu visibility on mobile */
+@media screen and (max-width: 768px) {
+    nav.open {
+        display: flex; /* Show navbar when menu icon is clicked */
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -105,6 +127,7 @@ nav .cta:hover {
         font-size: 1.2em; /* Increase button text size on small screens */
     }
 }
+
 
 
 section {
